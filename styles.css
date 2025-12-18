@@ -1,0 +1,122 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    color: rgb(8, 70, 161);
+
+}
+
+header {
+    text-align: center;
+    padding: 1em 0em;
+    background: rgb(9, 37, 0);
+    box-shadow: 0 0 0.5rem yellow;
+}
+
+footer {
+    text-align: center;
+    margin: 2em 5em;
+    border-radius: 2em;
+    background: rgb(2, 197, 28);
+    box-shadow: 0 0 1em yellow;
+    padding: 0.1em;
+}
+
+footer strong {
+    color: rgb(0, 0, 0);
+}
+
+body {
+    background: rgb(20, 122, 34);
+}
+
+.about-me {
+    text-align: center;
+    margin: 1em 5em;
+    border-radius: 2em;
+    background: rgb(2, 197, 28);
+    box-shadow: 0 0 1em yellow;
+    padding: 0.1em;
+}
+
+
+.projects {
+    text-align: center;
+
+    h2 {
+        margin-top: 2rem;
+    }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr th {
+    padding: 0.5rem;
+    border: black 1px solid;
+    background: #770101;
+}
+
+tr td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5rem;
+    background: rgb(212, 210, 97);
+    text-align: justify;
+}
+
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    justify-items: center;
+    margin-bottom: 1em;
+}
+
+
+
+.carousel-item::scroll-marker {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.carousel-item::scroll-marker:target-current {
+    background: #161514;
+}
+
+/* Navegación de fallback */
+.carousel-nav {
+    padding: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-evenly;
+
+    a {
+
+        border-radius: 1em;
+        padding: 1rem;
+        text-decoration: none;
+        color: #000000;
+        background: rgb(255, 0, 0);
+        box-shadow: 0 0 15px rgb(0, 0, 0);
+    }
+}
+
+
+/* Ocultar fallback cuando los controles nativos están soportados */
+@supports (scroll-button-inline: both) {
+    .carousel-nav {
+        display: none;
+    }
+}
